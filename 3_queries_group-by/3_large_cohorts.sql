@@ -1,0 +1,7 @@
+SELECT c.name AS cohort_name, COUNT(s.id) AS student_count
+FROM cohorts AS c
+JOIN students AS s
+ON c.id = s.cohort_id
+GROUP BY (c.name)
+HAVING COUNT(s.id) >= 18
+ORDER BY student_count;
